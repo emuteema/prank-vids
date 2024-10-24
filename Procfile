@@ -1,1 +1,1 @@
-web: Prank_Vids app:app
+web: gunicorn Prank_Vids:app
