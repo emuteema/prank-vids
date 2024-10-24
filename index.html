@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Prank Shorts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .video-item {
+            width: 300px;
+            margin: 20px;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top Trending Prank Shorts</h1>
+    <div class="video-container">
+        {% for video in videos %}
+        <div class="video-item">
+            <a href="{{ video['url'] }}" target="_blank">
+                <img src="{{ video['thumbnail'] }}" alt="Thumbnail">
+                <h3>{{ video['title'] }}</h3>
+            </a>
+            <p>Views: {{ video['views'] }}</p>
+            <p>Published at: {{ video['published_at'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
