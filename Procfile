@@ -1,1 +1,0 @@
-web: gunicorn Prank_Vids:app
